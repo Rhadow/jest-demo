@@ -1,3 +1,5 @@
+'use strict';
+
 jest.dontMock('../components/fetchCurrentUser.js');
 
 describe('fetch current user', function() {
@@ -5,7 +7,7 @@ describe('fetch current user', function() {
 	it('calls into ajax with correct param', function() {
 		var $ = require('jquery'),
 		    fetchCurrentUser = require('../components/fetchCurrentUser.js');
-		function dummyCallback () {};
+		function dummyCallback () {}
 
 		fetchCurrentUser(dummyCallback);
 
@@ -17,9 +19,9 @@ describe('fetch current user', function() {
 	});
 
 	it('should call callback correctly', function(){
-		var $ = require('jquery'),
+		var $                = require('jquery'),
 		    fetchCurrentUser = require('../components/fetchCurrentUser.js');
-		    callback = jest.genMockFunction();
+		    callback         = jest.genMockFunction();
 
 		fetchCurrentUser(callback);
 
@@ -28,7 +30,7 @@ describe('fetch current user', function() {
 			firstName: 'Howard'
 		});
 
-		expect(callback.mock.calls[0][0]).toBeEqual({
+		expect(callback.mock.calls[0][0]).toEqual({
 			loggedIn: true,
 			fullName: 'Howard Chang'
 		});

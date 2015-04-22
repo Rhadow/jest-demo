@@ -9,6 +9,6 @@ describe('sum', function() {
 	});
 	it('also concats two strings', function(){
 		var sum = require ('../components/sum.js');
-		expect(sum('Howard loves ','Amy')).toBe(null);
+		expect(sum('String 1 ','String 2')).toBe(null);
 	});
 });
